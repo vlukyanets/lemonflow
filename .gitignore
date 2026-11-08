@@ -24,13 +24,20 @@ Thumbs.db
 !.vscode/extensions.json
 *.swp
 
-# Build / deps / caches - add stack-specific entries below
-dist/
+# Build / deps / caches
 build/
-coverage/
-node_modules/
-.venv/
-__pycache__/
-*.pyc
-target/
 .cache/
+
+# Android / Gradle
+.gradle/
+.kotlin/
+local.properties
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+# Release signing keys
+*.jks
+*.keystore

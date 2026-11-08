@@ -8,7 +8,11 @@
       "Bash(git show:*)",
       "Bash(ls:*)",
       "Bash(grep:*)",
-      "Bash(.specify/scripts/bash/*)"
+      "Bash(.specify/scripts/bash/*)",
+      "Bash(./gradlew check:*)",
+      "Bash(./gradlew spotlessApply:*)",
+      "Bash(./gradlew :app:testDebugUnitTest:*)",
+      "Bash(./gradlew assembleDebug:*)"
     ],
     "ask": [
       "Bash(git push:*)",

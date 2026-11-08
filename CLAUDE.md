@@ -9,7 +9,9 @@ notes here - if a rule applies to every agent, put it in `AGENTS.md` instead.
 
 - **Spec Kit skills** are in `.claude/skills/speckit-*`: `/speckit-specify`,
   `/speckit-clarify`, `/speckit-plan`, `/speckit-checklist`, `/speckit-tasks`,
-  `/speckit-analyze`, `/speckit-implement`, `/speckit-converge`, `/speckit-constitution`.
+  `/speckit-analyze`, `/speckit-implement`, `/speckit-converge`, `/speckit-constitution`;
+  extensions: `/speckit-bug-assess`, `/speckit-bug-fix`, `/speckit-bug-test` and
+  `/speckit-assess-intake`, `-research`, `-define`, `-shape`, `-decide`.
 - **Worktrees**: start each feature with `claude --worktree <name>`, named after the
   feature (or ask to work in a worktree). It creates `.claude/worktrees/<name>/` on
   branch `worktree-<name>`, based on the main checkout's current `HEAD`
