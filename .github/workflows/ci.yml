@@ -8,6 +8,11 @@ on:
 permissions:
   contents: read
 
+# A new push to a pull request cancels its older, now pointless run; master runs always finish.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -20,4 +25,22 @@ jobs:
       # Also validates the Gradle wrapper checksum. The runner image ships the Android SDK
       # (ANDROID_HOME) with licenses accepted; AGP downloads any missing platform.
       - uses: gradle/actions/setup-gradle@v6
-      - run: ./gradlew check assembleDebug
+
+      # The full check from AGENTS.md, plus the release build: release-only problems (for
+      # example missing R8 keep rules, once minification is on) fail the pull request.
+      - run: ./gradlew check assembleDebug assembleRelease
+
+      # Failing tests are named in the Gradle log; on failure, keep the full reports too, so
+      # a red run can be read without building locally.
+      - name: Upload reports
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: reports
+          path: |
+            app/build/reports/tests/
+            app/build/test-results/
+            app/build/reports/lint-results-*.html
+            app/build/reports/detekt/
+          retention-days: 14
+          if-no-files-found: ignore
