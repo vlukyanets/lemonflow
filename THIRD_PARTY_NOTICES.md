@@ -6,6 +6,15 @@
 [GitHub Spec Kit](https://github.com/github/spec-kit), licensed under the MIT License.
 The rest of this repository is not covered by this notice.
 
+## Roboto font
+
+`app/src/main/res/font/roboto_regular.ttf`, `roboto_medium.ttf` and `roboto_bold.ttf` are
+Roboto v2.138 from [googlefonts/roboto](https://github.com/googlefonts/roboto/releases/tag/v2.138)
+(`roboto-android.zip`), unmodified. Copyright 2011 Google Inc. All Rights Reserved.
+Licensed under the Apache License, Version 2.0; you may obtain a copy of the License at
+https://www.apache.org/licenses/LICENSE-2.0. The fonts are distributed on an "AS IS" basis,
+without warranties or conditions of any kind.
+
 ```
 MIT License
 

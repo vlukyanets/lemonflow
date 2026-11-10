@@ -22,7 +22,8 @@ notes here - if a rule applies to every agent, put it in `AGENTS.md` instead.
   `git branch -d worktree-<name>`.
 - **File edits**: create and change files only with the `Edit` and `Write` tools - never
   through Bash or Python (heredocs, `sed -i`, redirects, scripts that write files). Bash
-  and Python stay fine for running commands, tests and read-only inspection.
+  and Python stay fine for running commands, tests and read-only inspection. The only
+  exception is copying plan-approved binary assets with `cp` (see `AGENTS.md` Boundaries).
 - **Plan mode** for changes outside the Spec Kit cycle that are still more than a small fix.
 - **Learning loop**: when I correct you on something that will recur, propose a one-line
   addition to the *Gotchas* section of `AGENTS.md`.

@@ -1,4 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="main_title">Твій день, у твоєму темпі.</string>
+  <!-- Navigation -->
+  <string name="tab_today">Сьогодні</string>
+  <string name="tab_habits">Звички</string>
+  <string name="tab_insights">Аналітика</string>
+  <string name="tab_settings">Налаштування</string>
+
+  <!-- Insights placeholder (FR-020) -->
+  <string name="insights_coming_soon">Незабаром</string>
+  <string name="insights_body">Тут зʼявляться тенденції та закономірності ваших звичок.</string>
+
+  <!-- Amounts and goal lines -->
+  <string name="amount_minutes">%1$d хв</string>
+  <plurals name="amount_times">
+    <item quantity="one">%1$d раз</item>
+    <item quantity="few">%1$d рази</item>
+    <item quantity="many">%1$d разів</item>
+    <item quantity="other">%1$d рази</item>
+  </plurals>
+  <plurals name="amount_pages">
+    <item quantity="one">%1$d стор.</item>
+    <item quantity="few">%1$d стор.</item>
+    <item quantity="many">%1$d стор.</item>
+    <item quantity="other">%1$d стор.</item>
+  </plurals>
+  <plurals name="amount_steps">
+    <item quantity="one">%1$d крок</item>
+    <item quantity="few">%1$d кроки</item>
+    <item quantity="many">%1$d кроків</item>
+    <item quantity="other">%1$d кроку</item>
+  </plurals>
+  <string name="amount_custom">%1$d %2$s</string>
+  <string name="goal_target_min">Ціль %1$s · мінімум %2$s</string>
+  <string name="goal_limits">Ліміт %1$d · у важкий день %2$d</string>
+  <string name="goal_step">крок %1$s</string>
+  <string name="meta_join">%1$s · %2$s</string>
+
+  <!-- Habit types -->
+  <string name="type_check">Позначка</string>
+  <string name="type_count">Лічильник</string>
+  <string name="type_timer">Таймер</string>
+  <string name="type_avoid">Уникати</string>
+  <string name="type_check_hint">Позначити, що зроблено</string>
+  <string name="type_count_hint">Додавати кількість кроками</string>
+  <string name="type_timer_hint">Засікати час таймером</string>
+  <string name="type_avoid_hint">Тримати в межах ліміту</string>
+
+  <!-- Units -->
+  <string name="unit_minutes">хвилини</string>
+  <string name="unit_times">рази</string>
+  <string name="unit_pages">сторінки</string>
+  <string name="unit_steps">кроки</string>
+  <string name="unit_custom">Своя одиниця</string>
+  <string name="unit_min_short">хв</string>
+
+  <!-- Habits list and archive -->
+  <string name="habits_add">Додати звичку</string>
+  <string name="habits_active">Активні</string>
+  <string name="habits_core_hint">Ключові звички йдуть першими на екрані «Сьогодні».</string>
+  <string name="habits_archive">Архів</string>
+  <string name="habits_empty">Звичок поки немає. Почніть з однієї невеликої звички.</string>
+  <string name="core_habit">Ключова звичка</string>
+  <string name="archive_body">Звички в архіві зберігають історію та приховані з екрана «Сьогодні». Повернути можна будь-коли.</string>
+  <string name="archive_empty">Архів порожній.</string>
+  <string name="archived_on">В архіві з %1$s</string>
+  <string name="archive_restore">Повернути</string>
+  <string name="archive_restore_cd">Повернути «%1$s»</string>
+  <string name="delete_permanently">Видалити назавжди</string>
+  <string name="delete_permanently_cd">Видалити «%1$s» назавжди</string>
+  <string name="delete_title">Видалити «%1$s» назавжди?</string>
+  <string name="delete_body">Її історія теж видалиться, відновити її буде неможливо.</string>
+  <string name="delete_confirm">Видалити</string>
+  <string name="cancel">Скасувати</string>
+  <string name="back">Назад</string>
+
+  <!-- Editor -->
+  <string name="editor_new">Нова звичка</string>
+  <string name="editor_edit">Змінити звичку</string>
+  <string name="editor_save">Зберегти</string>
+  <string name="editor_type">Тип</string>
+  <string name="editor_type_locked">Тип не можна змінити після створення</string>
+  <string name="editor_name">Назва</string>
+  <string name="editor_name_placeholder">наприклад, Читання</string>
+  <string name="editor_target">Ціль · гарний день</string>
+  <string name="editor_minimum">Мінімум · важкий день</string>
+  <string name="editor_limit_good">Ліміт у гарний день</string>
+  <string name="editor_limit_hard">Ліміт у важкий день</string>
+  <string name="editor_amount">Кількість</string>
+  <string name="editor_unit">Одиниця</string>
+  <string name="editor_target_unit">Одиниця цілі</string>
+  <string name="editor_minimum_unit">Одиниця мінімуму</string>
+  <string name="editor_custom_unit">Назва одиниці, наприклад мл</string>
+  <string name="editor_step">Крок для + і -</string>
+  <string name="editor_step_hint">Скільки додає одне натискання на + або - на екрані «Сьогодні».</string>
+  <string name="editor_core_hint">Опора вашого дня, йде першою на екрані «Сьогодні»</string>
+  <string name="editor_archive">Перенести в архів</string>
+
+  <!-- Validation hints (FR-005) -->
+  <string name="error_name_empty">Додайте назву</string>
+  <string name="error_name_too_long">Назва має бути коротшою за 120 символів</string>
+  <string name="error_target_empty">Додайте кількість для гарного дня</string>
+  <string name="error_baseline_empty">Додайте кількість для важкого дня</string>
+  <string name="error_limit_good_empty">Додайте ліміт для гарного дня</string>
+  <string name="error_limit_hard_empty">Додайте ліміт для важкого дня</string>
+  <string name="error_baseline_above_target">Мінімум не має бути більшим за ціль</string>
+  <string name="error_limit_below_target">Ліміт важкого дня не має бути меншим за ліміт гарного</string>
+  <string name="error_custom_unit_empty">Додайте назву одиниці</string>
+  <string name="error_custom_unit_too_long">Назва одиниці має бути коротшою за 30 символів</string>
+  <string name="error_step_invalid">Крок має бути 1 або більше</string>
+
+  <!-- Today -->
+  <string name="today_day_closes">День закривається о %1$s</string>
+  <plurals name="today_done_count">
+    <item quantity="one">%1$d/%2$d виконано</item>
+    <item quantity="few">%1$d/%2$d виконано</item>
+    <item quantity="many">%1$d/%2$d виконано</item>
+    <item quantity="other">%1$d/%2$d виконано</item>
+  </plurals>
+  <string name="today_hard_day">Важкий день</string>
+  <string name="today_hard_day_hint">Сьогодні зараховується мінімум</string>
+  <string name="today_min_tag">мінімум</string>
+  <string name="today_goal_today">Ціль на сьогодні: %1$s</string>
+  <string name="today_progress">%1$s з %2$s</string>
+  <string name="today_min_amount">мінімум %1$s</string>
+  <plurals name="today_avoid_times">
+    <item quantity="one">%1$d раз сьогодні</item>
+    <item quantity="few">%1$d рази сьогодні</item>
+    <item quantity="many">%1$d разів сьогодні</item>
+    <item quantity="other">%1$d рази сьогодні</item>
+  </plurals>
+  <string name="today_avoid_none">Жодного разу</string>
+  <string name="today_avoid_limits">ліміт %1$d, у важкий день %2$d</string>
+  <string name="today_avoid_limit">ліміт %1$d</string>
+  <string name="today_mark_done_cd">Позначити «%1$s»</string>
+  <string name="today_undo_cd">Зняти позначку «%1$s»</string>
+  <string name="today_mark_min_cd">Позначити «%1$s» за мінімумом</string>
+  <string name="today_add_cd">Додати %1$s до «%2$s»</string>
+  <string name="today_remove_cd">Прибрати %1$s з «%2$s»</string>
+  <string name="today_progress_cd">Прогрес: %1$s</string>
+  <string name="today_start_cd">Запустити «%1$s»</string>
+  <string name="today_pause_cd">Пауза «%1$s»</string>
+  <string name="today_log_one_cd">Позначити ще раз «%1$s»</string>
+  <string name="today_undo_one_cd">Скасувати одну позначку «%1$s»</string>
+  <string name="today_avoid_badge_cd">%1$s: %2$s</string>
+  <string name="today_empty_title">Ласкаво просимо</string>
+  <string name="today_empty_body">Почніть з однієї невеликої звички. Для важких днів можна задати мінімум.</string>
+  <string name="today_add_first">Додати першу звичку</string>
+  <string name="today_day_cd">%1$s %2$d, %3$s</string>
+  <string name="today_status_today">сьогодні</string>
+  <string name="today_status_nothing">нічого не позначено</string>
+  <plurals name="today_status_done">
+    <item quantity="one">%1$d з %2$d виконано</item>
+    <item quantity="few">%1$d з %2$d виконано</item>
+    <item quantity="many">%1$d з %2$d виконано</item>
+    <item quantity="other">%1$d з %2$d виконано</item>
+  </plurals>
+
+  <!-- Past day sheet -->
+  <string name="past_view_only">Минулий день · лише перегляд</string>
+  <string name="past_done">Виконано</string>
+  <string name="past_minimum">Мінімум</string>
+  <string name="past_nothing">Нічого не позначено</string>
+  <string name="past_nothing_body">Цього дня позначок немає.</string>
+  <string name="past_none">жодного разу</string>
+  <string name="close">Закрити</string>
+
+  <!-- Data can't be opened -->
+  <string name="data_unavailable_title">Не вдається відкрити ваші дані</string>
+  <string name="data_unavailable_body">Ключ безпеки цього пристрою більше недоступний, тому збережені звички й позначки неможливо розшифрувати. Ці дані неможливо відновити.</string>
+  <string name="start_fresh">Почати заново</string>
+  <string name="start_fresh_title">Почати заново?</string>
+  <string name="start_fresh_body">Старі звички й позначки буде видалено. Їх не можна буде відновити.</string>
+
+  <!-- Settings -->
+  <string name="settings_day_ends">День закінчується о</string>
+  <string name="settings_day_ends_hint">Позначки після опівночі зараховуються в попередній день до цього часу.</string>
+  <string name="settings_hours_range">Цілі години, 00:00–06:00</string>
+  <string name="settings_language">Мова</string>
+  <string name="settings_language_hint">Лише для LemonFlow, мова телефону не змінюється.</string>
+  <string name="settings_language_system">Як у системі</string>
+  <string name="settings_about">Про застосунок</string>
+  <string name="settings_version">Версія %1$s</string>
+  <string name="settings_made_by">Автор: %1$s</string>
+  <string name="settings_license">Ліцензія</string>
+  <string name="settings_source">Вихідний код</string>
+  <string name="settings_oss">Ліцензії відкритого ПЗ</string>
+  <string name="licenses_intro">LemonFlow — вільна програма: її можна поширювати та змінювати на умовах GNU General Public License версії 3 або пізнішої. Її зібрано з цих компонентів із відкритим кодом.</string>
+  <string name="license_public_domain">Суспільне надбання</string>
+  <string name="license_text_official">Офіційний текст англійською мовою.</string>
+  <string name="oss_part_of">%1$s (входить до %2$s)</string>
+  <string name="license_title_sqlcipher">Ліцензія SQLCipher (у стилі BSD)</string>
 </resources>
