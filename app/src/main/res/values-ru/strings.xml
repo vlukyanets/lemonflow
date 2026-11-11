@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Navigation -->
+  <string name="tab_today">Сегодня</string>
+  <string name="tab_habits">Привычки</string>
+  <string name="tab_insights">Аналитика</string>
+  <string name="tab_settings">Настройки</string>
+
+  <!-- Insights placeholder (FR-020) -->
+  <string name="insights_coming_soon">Скоро</string>
+  <string name="insights_body">Здесь появятся тенденции и закономерности ваших привычек.</string>
+
+  <!-- Amounts and goal lines -->
+  <string name="amount_minutes">%1$d мин</string>
+  <plurals name="amount_times">
+    <item quantity="one">%1$d раз</item>
+    <item quantity="few">%1$d раза</item>
+    <item quantity="many">%1$d раз</item>
+    <item quantity="other">%1$d раза</item>
+  </plurals>
+  <plurals name="amount_pages">
+    <item quantity="one">%1$d стр.</item>
+    <item quantity="few">%1$d стр.</item>
+    <item quantity="many">%1$d стр.</item>
+    <item quantity="other">%1$d стр.</item>
+  </plurals>
+  <plurals name="amount_steps">
+    <item quantity="one">%1$d шаг</item>
+    <item quantity="few">%1$d шага</item>
+    <item quantity="many">%1$d шагов</item>
+    <item quantity="other">%1$d шага</item>
+  </plurals>
+  <string name="amount_custom">%1$d %2$s</string>
+  <string name="goal_target_min">Цель %1$s · минимум %2$s</string>
+  <string name="goal_limits">Лимит %1$d · в тяжёлый день %2$d</string>
+  <string name="goal_step">шаг %1$s</string>
+  <string name="meta_join">%1$s · %2$s</string>
+
+  <!-- Habit types -->
+  <string name="type_check">Отметка</string>
+  <string name="type_count">Счётчик</string>
+  <string name="type_timer">Таймер</string>
+  <string name="type_avoid">Избегать</string>
+  <string name="type_check_hint">Отметить, что сделано</string>
+  <string name="type_count_hint">Добавлять количество шагами</string>
+  <string name="type_timer_hint">Засекать время таймером</string>
+  <string name="type_avoid_hint">Держать в пределах лимита</string>
+
+  <!-- Units -->
+  <string name="unit_minutes">минуты</string>
+  <string name="unit_times">разы</string>
+  <string name="unit_pages">страницы</string>
+  <string name="unit_steps">шаги</string>
+  <string name="unit_custom">Своя единица</string>
+  <string name="unit_min_short">мин</string>
+
+  <!-- Habits list and archive -->
+  <string name="habits_add">Добавить привычку</string>
+  <string name="habits_active">Активные</string>
+  <string name="habits_core_hint">Ключевые привычки идут первыми на экране «Сегодня».</string>
+  <string name="habits_archive">Архив</string>
+  <string name="habits_empty">Привычек пока нет. Начните с одной небольшой привычки.</string>
+  <string name="core_habit">Ключевая привычка</string>
+  <string name="archive_body">Привычки в архиве сохраняют историю и скрыты с экрана «Сегодня». Вернуть можно в любой момент.</string>
+  <string name="archive_empty">В архиве пусто.</string>
+  <string name="archived_on">В архиве с %1$s</string>
+  <string name="archive_restore">Вернуть</string>
+  <string name="archive_restore_cd">Вернуть «%1$s»</string>
+  <string name="delete_permanently">Удалить навсегда</string>
+  <string name="delete_permanently_cd">Удалить «%1$s» навсегда</string>
+  <string name="delete_title">Удалить «%1$s» навсегда?</string>
+  <string name="delete_body">Её история тоже удалится, восстановить её будет нельзя.</string>
+  <string name="delete_confirm">Удалить</string>
+  <string name="cancel">Отмена</string>
+  <string name="back">Назад</string>
+
+  <!-- Editor -->
+  <string name="editor_new">Новая привычка</string>
+  <string name="editor_edit">Изменить привычку</string>
+  <string name="editor_save">Сохранить</string>
+  <string name="editor_type">Тип</string>
+  <string name="editor_type_locked">Тип нельзя изменить после создания</string>
+  <string name="editor_name">Название</string>
+  <string name="editor_name_placeholder">например, Чтение</string>
+  <string name="editor_target">Цель · хороший день</string>
+  <string name="editor_minimum">Минимум · тяжёлый день</string>
+  <string name="editor_limit_good">Лимит в хороший день</string>
+  <string name="editor_limit_hard">Лимит в тяжёлый день</string>
+  <string name="editor_amount">Количество</string>
+  <string name="editor_unit">Единица</string>
+  <string name="editor_target_unit">Единица цели</string>
+  <string name="editor_minimum_unit">Единица минимума</string>
+  <string name="editor_custom_unit">Название единицы, например мл</string>
+  <string name="editor_step">Шаг для + и -</string>
+  <string name="editor_step_hint">Сколько добавляет одно нажатие на + или - на экране «Сегодня».</string>
+  <string name="editor_core_hint">Опора вашего дня, идёт первой на экране «Сегодня»</string>
+  <string name="editor_archive">Перенести в архив</string>
+
+  <!-- Validation hints (FR-005) -->
+  <string name="error_name_empty">Добавьте название</string>
+  <string name="error_name_too_long">Название должно быть короче 120 символов</string>
+  <string name="error_target_empty">Добавьте количество для хорошего дня</string>
+  <string name="error_baseline_empty">Добавьте количество для тяжёлого дня</string>
+  <string name="error_limit_good_empty">Добавьте лимит для хорошего дня</string>
+  <string name="error_limit_hard_empty">Добавьте лимит для тяжёлого дня</string>
+  <string name="error_baseline_above_target">Минимум не должен быть больше цели</string>
+  <string name="error_limit_below_target">Лимит тяжёлого дня не должен быть меньше лимита хорошего</string>
+  <string name="error_custom_unit_empty">Добавьте название единицы</string>
+  <string name="error_custom_unit_too_long">Название единицы должно быть короче 30 символов</string>
+  <string name="error_step_invalid">Шаг должен быть 1 или больше</string>
+
+  <!-- Today -->
+  <string name="today_day_closes">День закрывается в %1$s</string>
+  <plurals name="today_done_count">
+    <item quantity="one">%1$d/%2$d выполнено</item>
+    <item quantity="few">%1$d/%2$d выполнено</item>
+    <item quantity="many">%1$d/%2$d выполнено</item>
+    <item quantity="other">%1$d/%2$d выполнено</item>
+  </plurals>
+  <string name="today_hard_day">Тяжёлый день</string>
+  <string name="today_hard_day_hint">Сегодня засчитывается минимум</string>
+  <!-- «мин» — это минуты; минимум всегда пишется полностью. -->
+  <string name="today_min_tag">минимум</string>
+  <string name="today_goal_today">Цель на сегодня: %1$s</string>
+  <string name="today_progress">%1$s из %2$s</string>
+  <string name="today_min_amount">минимум %1$s</string>
+  <plurals name="today_avoid_times">
+    <item quantity="one">%1$d раз сегодня</item>
+    <item quantity="few">%1$d раза сегодня</item>
+    <item quantity="many">%1$d раз сегодня</item>
+    <item quantity="other">%1$d раза сегодня</item>
+  </plurals>
+  <string name="today_avoid_none">Ни разу</string>
+  <string name="today_avoid_limits">лимит %1$d, в тяжёлый день %2$d</string>
+  <string name="today_avoid_limit">лимит %1$d</string>
+  <string name="today_mark_done_cd">Отметить «%1$s»</string>
+  <string name="today_undo_cd">Снять отметку «%1$s»</string>
+  <string name="today_mark_min_cd">Отметить «%1$s» по минимуму</string>
+  <string name="today_add_cd">Добавить %1$s к «%2$s»</string>
+  <string name="today_remove_cd">Убрать %1$s из «%2$s»</string>
+  <string name="today_progress_cd">Прогресс: %1$s</string>
+  <string name="today_start_cd">Запустить «%1$s»</string>
+  <string name="today_pause_cd">Пауза «%1$s»</string>
+  <string name="today_log_one_cd">Отметить ещё раз «%1$s»</string>
+  <string name="today_undo_one_cd">Отменить одну отметку «%1$s»</string>
+  <string name="today_avoid_badge_cd">%1$s: %2$s</string>
+  <string name="today_empty_title">Добро пожаловать</string>
+  <string name="today_empty_body">Начните с одной небольшой привычки. Для тяжёлых дней можно задать минимум.</string>
+  <string name="today_add_first">Добавить первую привычку</string>
+  <string name="today_day_cd">%1$s %2$d, %3$s</string>
+  <string name="today_status_today">сегодня</string>
+  <string name="today_status_nothing">ничего не отмечено</string>
+  <plurals name="today_status_done">
+    <item quantity="one">%1$d из %2$d выполнено</item>
+    <item quantity="few">%1$d из %2$d выполнено</item>
+    <item quantity="many">%1$d из %2$d выполнено</item>
+    <item quantity="other">%1$d из %2$d выполнено</item>
+  </plurals>
+
+  <!-- Past day sheet -->
+  <string name="past_view_only">Прошедший день · только просмотр</string>
+  <string name="past_done">Выполнено</string>
+  <string name="past_minimum">Минимум</string>
+  <string name="past_nothing">Ничего не отмечено</string>
+  <string name="past_nothing_body">В этот день отметок нет.</string>
+  <string name="past_none">ни разу</string>
+  <string name="close">Закрыть</string>
+
+  <!-- Data can't be opened -->
+  <string name="data_unavailable_title">Не удаётся открыть ваши данные</string>
+  <string name="data_unavailable_body">Ключ безопасности этого устройства больше недоступен, поэтому сохранённые привычки и отметки нельзя расшифровать. Эти данные нельзя восстановить.</string>
+  <string name="start_fresh">Начать заново</string>
+  <string name="start_fresh_title">Начать заново?</string>
+  <string name="start_fresh_body">Старые привычки и отметки будут удалены. Их нельзя будет восстановить.</string>
+
+  <!-- Settings -->
+  <string name="settings_day_ends">День заканчивается в</string>
+  <string name="settings_day_ends_hint">Отметки после полуночи засчитываются в предыдущий день до этого времени.</string>
+  <string name="settings_hours_range">Целые часы, 00:00–06:00</string>
+  <string name="settings_language">Язык</string>
+  <string name="settings_language_hint">Только для LemonFlow, язык телефона не меняется.</string>
+  <string name="settings_language_system">Как в системе</string>
+  <string name="settings_about">О приложении</string>
+  <string name="settings_version">Версия %1$s</string>
+  <string name="settings_made_by">Автор: %1$s</string>
+  <string name="settings_license">Лицензия</string>
+  <string name="settings_source">Исходный код</string>
+  <string name="settings_oss">Лицензии открытого ПО</string>
+  <string name="licenses_intro">LemonFlow — свободная программа: её можно распространять и изменять на условиях GNU General Public License версии 3 или более поздней. Она собрана из этих компонентов с открытым кодом.</string>
+  <string name="license_public_domain">Общественное достояние</string>
+  <string name="license_text_official">Официальный текст на английском языке.</string>
+  <string name="oss_part_of">%1$s (входит в %2$s)</string>
+  <string name="license_title_sqlcipher">Лицензия SQLCipher (в стиле BSD)</string>
+</resources>

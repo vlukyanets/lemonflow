@@ -1,0 +1,42 @@
+version: 2
+updates:
+  - package-ecosystem: gradle
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Europe/Kyiv
+    cooldown:
+      default-days: 7
+      semver-major-days: 14
+      semver-minor-days: 7
+      semver-patch-days: 3
+    groups:
+      gradle-minor-patch:
+        update-types: [minor, patch]
+    open-pull-requests-limit: 5
+    ignore:
+      # AGP and Kotlin majors are migrated by hand, in one reviewed change.
+      - dependency-name: com.android.application
+        update-types: [version-update:semver-major]
+      - dependency-name: com.android.tools.build:gradle
+        update-types: [version-update:semver-major]
+      - dependency-name: org.jetbrains.kotlin.*
+        update-types: [version-update:semver-major]
+      - dependency-name: org.jetbrains.kotlin:*
+        update-types: [version-update:semver-major]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Europe/Kyiv
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions:
+        patterns: ["*"]
+    open-pull-requests-limit: 5

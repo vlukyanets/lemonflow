@@ -1,0 +1,33 @@
+# Overrides on top of detekt's default config (buildUponDefaultConfig = true).
+naming:
+  FunctionNaming:
+    # Composable functions are PascalCase by Compose convention.
+    ignoreAnnotated: ['Composable']
+
+style:
+  ForbiddenMethodCall:
+    # FR-014 / constitution II: user data must never reach logs or crash output, so the app
+    # has no logging at all. A real need gets an explicit, reviewed exception here.
+    active: true
+    methods:
+      - value: 'android.util.Log.v'
+        reason: 'No logging (FR-014): logs may leak user data.'
+      - value: 'android.util.Log.d'
+        reason: 'No logging (FR-014): logs may leak user data.'
+      - value: 'android.util.Log.i'
+        reason: 'No logging (FR-014): logs may leak user data.'
+      - value: 'android.util.Log.w'
+        reason: 'No logging (FR-014): logs may leak user data.'
+      - value: 'android.util.Log.e'
+        reason: 'No logging (FR-014): logs may leak user data.'
+      - value: 'android.util.Log.wtf'
+        reason: 'No logging (FR-014): logs may leak user data.'
+      - value: 'kotlin.io.println'
+        reason: 'No console output (FR-014).'
+      - value: 'kotlin.io.print'
+        reason: 'No console output (FR-014).'
+      - value: 'java.lang.Throwable.printStackTrace'
+        reason: 'Stack traces may carry user data (FR-014).'
+  UnusedPrivateMember:
+    # @Preview functions are private and only called by tooling.
+    ignoreAnnotated: ['Preview']

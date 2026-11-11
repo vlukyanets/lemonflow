@@ -3,3 +3,5 @@
 .env
 .env.local
 CLAUDE.local.md
+# Android SDK location (sdk.dir) - Gradle can't build without it unless ANDROID_HOME is set.
+local.properties

@@ -13,6 +13,11 @@ indent_size = 4
 [*.{json,jsonc,json5,yml,yaml,toml,xml,html,css,scss,less,js,jsx,mjs,cjs,ts,tsx,mts,cts,vue,svelte,md}]
 indent_size = 2
 
+# Kotlin: read by ktlint (via Spotless)
+[*.{kt,kts}]
+ktlint_code_style = android_studio
+ktlint_function_naming_ignore_when_annotated_with = Composable
+
 # Tabs required by the language or tool
 [{Makefile,*.mk,*.go}]
 indent_style = tab

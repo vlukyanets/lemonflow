@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name" translatable="false">LemonFlow</string>
+
+  <!-- Navigation -->
+  <string name="tab_today">Today</string>
+  <string name="tab_habits">Habits</string>
+  <string name="tab_insights">Insights</string>
+  <string name="tab_settings">Settings</string>
+
+  <!-- Insights placeholder (FR-020) -->
+  <string name="insights_coming_soon">Coming soon</string>
+  <string name="insights_body">Trends and patterns of your habits will appear here.</string>
+
+  <!-- Amounts and goal lines -->
+  <string name="amount_minutes">%1$d min</string>
+  <plurals name="amount_times">
+    <item quantity="one">%1$d time</item>
+    <item quantity="other">%1$d times</item>
+  </plurals>
+  <plurals name="amount_pages">
+    <item quantity="one">%1$d page</item>
+    <item quantity="other">%1$d pages</item>
+  </plurals>
+  <plurals name="amount_steps">
+    <item quantity="one">%1$d step</item>
+    <item quantity="other">%1$d steps</item>
+  </plurals>
+  <string name="amount_custom">%1$d %2$s</string>
+  <!-- "minimum" is never shortened to "min": that abbreviation means minutes. -->
+  <string name="goal_target_min">Target %1$s · minimum %2$s</string>
+  <string name="goal_limits">Limit %1$d · hard day %2$d</string>
+  <string name="goal_step">step %1$s</string>
+  <string name="meta_join">%1$s · %2$s</string>
+
+  <!-- Habit types -->
+  <string name="type_check">Check</string>
+  <string name="type_count">Count</string>
+  <string name="type_timer">Timer</string>
+  <string name="type_avoid">Avoid</string>
+  <string name="type_check_hint">Mark it done</string>
+  <string name="type_count_hint">Add amounts in steps</string>
+  <string name="type_timer_hint">Measure time with a timer</string>
+  <string name="type_avoid_hint">Keep it within a limit</string>
+
+  <!-- Units -->
+  <string name="unit_minutes">minutes</string>
+  <string name="unit_times">times</string>
+  <string name="unit_pages">pages</string>
+  <string name="unit_steps">steps</string>
+  <string name="unit_custom">Custom unit</string>
+  <string name="unit_min_short">min</string>
+
+  <!-- Habits list and archive -->
+  <string name="habits_add">Add habit</string>
+  <string name="habits_active">Active</string>
+  <string name="habits_core_hint">Core habits come first in Today.</string>
+  <string name="habits_archive">Archive</string>
+  <string name="habits_empty">No habits yet. Start with one small habit you would like to keep.</string>
+  <string name="core_habit">Core habit</string>
+  <string name="archive_body">Archived habits keep their history and are hidden from Today. Restore one any time.</string>
+  <string name="archive_empty">Nothing archived.</string>
+  <string name="archived_on">Archived %1$s</string>
+  <string name="archive_restore">Restore</string>
+  <string name="archive_restore_cd">Restore %1$s</string>
+  <string name="delete_permanently">Delete permanently</string>
+  <string name="delete_permanently_cd">Delete %1$s permanently</string>
+  <string name="delete_title">Delete %1$s permanently?</string>
+  <string name="delete_body">Its history will be removed and cannot be restored.</string>
+  <string name="delete_confirm">Delete</string>
+  <string name="cancel">Cancel</string>
+  <string name="back">Back</string>
+
+  <!-- Editor -->
+  <string name="editor_new">New habit</string>
+  <string name="editor_edit">Edit habit</string>
+  <string name="editor_save">Save</string>
+  <string name="editor_type">Type</string>
+  <string name="editor_type_locked">The type can\'t be changed after creation</string>
+  <string name="editor_name">Name</string>
+  <string name="editor_name_placeholder">e.g. Reading</string>
+  <string name="editor_target">Target · a good day</string>
+  <string name="editor_minimum">Minimum · a hard day</string>
+  <string name="editor_limit_good">Limit on a good day</string>
+  <string name="editor_limit_hard">Limit on a hard day</string>
+  <string name="editor_amount">Amount</string>
+  <string name="editor_unit">Unit</string>
+  <string name="editor_target_unit">Target unit</string>
+  <string name="editor_minimum_unit">Minimum unit</string>
+  <string name="editor_custom_unit">Unit name, e.g. ml</string>
+  <string name="editor_step">Step for + and -</string>
+  <string name="editor_step_hint">How much one tap on + or - changes in Today.</string>
+  <string name="editor_core_hint">An anchor of your day, listed first in Today</string>
+  <string name="editor_archive">Archive habit</string>
+
+  <!-- Validation hints (FR-005): gentle, never blaming -->
+  <string name="error_name_empty">Add a name</string>
+  <string name="error_name_too_long">Keep the name under 120 characters</string>
+  <string name="error_target_empty">Add an amount for a good day</string>
+  <string name="error_baseline_empty">Add an amount for a hard day</string>
+  <string name="error_limit_good_empty">Add a limit for a good day</string>
+  <string name="error_limit_hard_empty">Add a limit for a hard day</string>
+  <string name="error_baseline_above_target">The minimum should be no more than the target</string>
+  <string name="error_limit_below_target">The hard-day limit should be no less than the good-day limit</string>
+  <string name="error_custom_unit_empty">Add a unit name</string>
+  <string name="error_custom_unit_too_long">Keep the unit name under 30 characters</string>
+  <string name="error_step_invalid">Use a step of 1 or more</string>
+
+  <!-- Today (FR-006..FR-012): neutral wording only, nothing that blames or warns -->
+  <string name="today_day_closes">Day closes at %1$s</string>
+  <plurals name="today_done_count">
+    <item quantity="one">%1$d/%2$d done</item>
+    <item quantity="other">%1$d/%2$d done</item>
+  </plurals>
+  <string name="today_hard_day">Hard day</string>
+  <string name="today_hard_day_hint">Today counts at the minimum</string>
+  <string name="today_min_tag">minimum</string>
+  <string name="today_goal_today">Goal today: %1$s</string>
+  <string name="today_progress">%1$s of %2$s</string>
+  <string name="today_min_amount">minimum %1$s</string>
+  <plurals name="today_avoid_times">
+    <item quantity="one">%1$d time today</item>
+    <item quantity="other">%1$d times today</item>
+  </plurals>
+  <string name="today_avoid_none">None today</string>
+  <string name="today_avoid_limits">limit %1$d, hard day %2$d</string>
+  <string name="today_avoid_limit">limit %1$d</string>
+  <string name="today_mark_done_cd">Mark %1$s done</string>
+  <string name="today_undo_cd">Undo %1$s</string>
+  <string name="today_mark_min_cd">Mark %1$s at minimum</string>
+  <string name="today_add_cd">Add %1$s to %2$s</string>
+  <string name="today_remove_cd">Remove %1$s from %2$s</string>
+  <string name="today_progress_cd">Progress: %1$s</string>
+  <string name="today_start_cd">Start %1$s</string>
+  <string name="today_pause_cd">Pause %1$s</string>
+  <string name="today_log_one_cd">Log one more: %1$s</string>
+  <string name="today_undo_one_cd">Undo one: %1$s</string>
+  <string name="today_avoid_badge_cd">%1$s: %2$s</string>
+  <string name="today_empty_title">Welcome</string>
+  <string name="today_empty_body">Start with one small habit you would like to keep. You can set a minimum for hard days.</string>
+  <string name="today_add_first">Add first habit</string>
+  <string name="today_day_cd">%1$s %2$d, %3$s</string>
+  <string name="today_status_today">today</string>
+  <string name="today_status_nothing">nothing recorded</string>
+  <plurals name="today_status_done">
+    <item quantity="one">%1$d of %2$d done</item>
+    <item quantity="other">%1$d of %2$d done</item>
+  </plurals>
+
+  <!-- Past day sheet (FR-006b): view only -->
+  <string name="past_view_only">Past day · view only</string>
+  <string name="past_done">Done</string>
+  <string name="past_minimum">Minimum</string>
+  <string name="past_nothing">Nothing recorded</string>
+  <string name="past_nothing_body">No marks were made on this day.</string>
+  <string name="past_none">none</string>
+  <string name="close">Close</string>
+
+  <!-- Data can't be opened (FR-015): calm, no raw error text -->
+  <string name="data_unavailable_title">Your data can\'t be opened</string>
+  <string name="data_unavailable_body">This device\'s security key is no longer available, so your saved habits and marks can\'t be decrypted. This data can\'t be recovered.</string>
+  <string name="start_fresh">Start fresh</string>
+  <string name="start_fresh_title">Start fresh?</string>
+  <string name="start_fresh_body">Your old habits and marks will be erased. They can\'t be recovered.</string>
+
+  <!-- Settings (FR-018) -->
+  <string name="settings_day_ends">Day ends at</string>
+  <string name="settings_day_ends_hint">Marks after midnight count for the previous day until this time.</string>
+  <string name="settings_hours_range">Whole hours, 00:00–06:00</string>
+  <string name="settings_language">Language</string>
+  <string name="settings_language_hint">Only for LemonFlow; your phone keeps its language.</string>
+  <string name="settings_language_system">System default</string>
+  <string name="settings_about">About</string>
+  <string name="settings_version">Version %1$s</string>
+  <string name="settings_made_by">Made by %1$s</string>
+  <!-- The author's name is the same in every language (FR-023). -->
+  <string name="author_name" translatable="false">Valentyn Lukianets</string>
+  <string name="settings_license">License</string>
+  <string name="settings_license_value" translatable="false">GPL-3.0</string>
+  <string name="settings_source">Source code</string>
+  <string name="settings_source_value" translatable="false">GitHub</string>
+  <string name="settings_oss">Open source licenses</string>
+  <string name="licenses_intro">LemonFlow is free software: you can share and change it under the GNU General Public License, version 3 or later. It is built with these open source components.</string>
+  <string name="license_public_domain">Public domain</string>
+  <string name="license_text_official">The official text, in English.</string>
+  <!-- "%1$s (part of %2$s)": a component that ships inside another, e.g. SQLite in SQLCipher. -->
+  <string name="oss_part_of">%1$s (part of %2$s)</string>
+  <string name="license_title_sqlcipher">SQLCipher License (BSD-style)</string>
+  <!--
+    Third-party components and license names are proper names: not translatable, so every
+    locale falls back to these (FR-024, Constitution VII).
+  -->
+  <string name="license_title_gpl3" translatable="false">GNU General Public License v3.0</string>
+  <string name="license_title_apache2" translatable="false">Apache License 2.0</string>
+  <string name="oss_androidx" translatable="false">AndroidX: Jetpack Compose, Material 3, Room, Navigation, Lifecycle</string>
+  <string name="oss_androidx_authors" translatable="false">The Android Open Source Project</string>
+  <string name="oss_kotlin" translatable="false">Kotlin standard library, kotlinx.coroutines, kotlinx.serialization</string>
+  <string name="oss_kotlin_authors" translatable="false">JetBrains s.r.o. and Kotlin contributors</string>
+  <string name="oss_dagger" translatable="false">Dagger and Hilt</string>
+  <string name="oss_dagger_authors" translatable="false">The Dagger Authors</string>
+  <string name="oss_guava" translatable="false">Guava ListenableFuture</string>
+  <string name="oss_guava_authors" translatable="false">The Guava Authors</string>
+  <string name="oss_inject" translatable="false">javax.inject, jakarta.inject</string>
+  <string name="oss_inject_authors" translatable="false">The JSR-330 Expert Group</string>
+  <string name="oss_annotations" translatable="false">JSpecify, JetBrains annotations, JSR 305 annotations</string>
+  <string name="oss_annotations_authors" translatable="false">The JSpecify Authors, JetBrains s.r.o., the FindBugs project</string>
+  <string name="oss_sqlcipher" translatable="false">SQLCipher for Android</string>
+  <string name="oss_sqlcipher_authors" translatable="false">Zetetic LLC</string>
+  <string name="oss_sqlite" translatable="false">SQLite</string>
+  <string name="oss_sqlite_authors" translatable="false">D. Richard Hipp and contributors</string>
+  <string name="oss_libtomcrypt" translatable="false">LibTomCrypt</string>
+  <string name="oss_libtomcrypt_authors" translatable="false">Tom St Denis and contributors</string>
+  <string name="oss_roboto" translatable="false">Roboto font</string>
+  <string name="oss_roboto_authors" translatable="false">Google Inc.</string>
+  <!-- Each language is shown by its own name, whatever the app language is (FR-022). -->
+  <string name="language_english" translatable="false">English</string>
+  <string name="language_russian" translatable="false">Русский</string>
+  <string name="language_ukrainian" translatable="false">Українська</string>
+</resources>
