@@ -1,0 +1,24 @@
+# Gradle / Android build output
+.gradle/
+.kotlin/
+build/
+local.properties
+*.apk
+*.aab
+
+# IDE / OS
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+*.swp
+
+# Signing material and secrets
+*.jks
+*.keystore
+.env
+.env.*
+
+# Personal AI-agent config
+CLAUDE.local.md
+.claude/settings.local.json

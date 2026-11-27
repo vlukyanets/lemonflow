@@ -1,0 +1,6 @@
+{
+  "uniqueId": "net.zetetic:sqlcipher-android",
+  "name": "SQLCipher for Android",
+  "description": "Encrypted SQLite database. The native library also contains SQLite (public domain) and LibTomCrypt (Unlicense).",
+  "website": "https://www.zetetic.net/sqlcipher/"
+}

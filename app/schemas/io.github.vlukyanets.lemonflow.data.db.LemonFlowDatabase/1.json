@@ -1,0 +1,626 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "da8eba15c822a3f52165904f5b19d10a",
+    "entities": [
+      {
+        "tableName": "area",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `color` INTEGER NOT NULL, `sortOrder` INTEGER NOT NULL, `archived` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "color",
+            "columnName": "color",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sortOrder",
+            "columnName": "sortOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "archived",
+            "columnName": "archived",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "project",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `areaId` TEXT, `parentProjectId` TEXT, `name` TEXT NOT NULL, `sortOrder` INTEGER NOT NULL, `archived` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`areaId`) REFERENCES `area`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`parentProjectId`) REFERENCES `project`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "areaId",
+            "columnName": "areaId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "parentProjectId",
+            "columnName": "parentProjectId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sortOrder",
+            "columnName": "sortOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "archived",
+            "columnName": "archived",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_project_areaId",
+            "unique": false,
+            "columnNames": [
+              "areaId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_project_areaId` ON `${TABLE_NAME}` (`areaId`)"
+          },
+          {
+            "name": "index_project_parentProjectId",
+            "unique": false,
+            "columnNames": [
+              "parentProjectId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_project_parentProjectId` ON `${TABLE_NAME}` (`parentProjectId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "area",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "areaId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          },
+          {
+            "table": "project",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "parentProjectId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "item",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `projectId` TEXT NOT NULL, `title` TEXT NOT NULL, `kind` TEXT NOT NULL, `measure` TEXT NOT NULL, `attention` TEXT NOT NULL, `defaultMinutes` INTEGER, `bufferBeforeMinutes` INTEGER NOT NULL, `bufferAfterMinutes` INTEGER NOT NULL, `recurrenceType` TEXT, `recurrenceWeekdays` INTEGER, `recurrenceIntervalDays` INTEGER, `recurrenceAnchorDate` TEXT, `state` TEXT NOT NULL, `notes` TEXT, PRIMARY KEY(`id`), FOREIGN KEY(`projectId`) REFERENCES `project`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "projectId",
+            "columnName": "projectId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kind",
+            "columnName": "kind",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "measure",
+            "columnName": "measure",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "attention",
+            "columnName": "attention",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "defaultMinutes",
+            "columnName": "defaultMinutes",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "bufferBeforeMinutes",
+            "columnName": "bufferBeforeMinutes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bufferAfterMinutes",
+            "columnName": "bufferAfterMinutes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "recurrenceType",
+            "columnName": "recurrenceType",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "recurrenceWeekdays",
+            "columnName": "recurrenceWeekdays",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "recurrenceIntervalDays",
+            "columnName": "recurrenceIntervalDays",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "recurrenceAnchorDate",
+            "columnName": "recurrenceAnchorDate",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "state",
+            "columnName": "state",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_item_projectId",
+            "unique": false,
+            "columnNames": [
+              "projectId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_item_projectId` ON `${TABLE_NAME}` (`projectId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "project",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "projectId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "day_plan",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `logicalDate` TEXT NOT NULL, `zoneId` TEXT NOT NULL, `dayStart` TEXT NOT NULL, `closeTime` TEXT NOT NULL, `closedAtMillis` INTEGER, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "logicalDate",
+            "columnName": "logicalDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "zoneId",
+            "columnName": "zoneId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dayStart",
+            "columnName": "dayStart",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "closeTime",
+            "columnName": "closeTime",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "closedAtMillis",
+            "columnName": "closedAtMillis",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_day_plan_logicalDate",
+            "unique": true,
+            "columnNames": [
+              "logicalDate"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_day_plan_logicalDate` ON `${TABLE_NAME}` (`logicalDate`)"
+          }
+        ]
+      },
+      {
+        "tableName": "planned_item",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `dayPlanId` TEXT NOT NULL, `itemId` TEXT NOT NULL, `sortOrder` INTEGER NOT NULL, `plannedMinutes` INTEGER, `bufferBeforeMinutes` INTEGER NOT NULL, `bufferAfterMinutes` INTEGER NOT NULL, `status` TEXT NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`dayPlanId`) REFERENCES `day_plan`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`itemId`) REFERENCES `item`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dayPlanId",
+            "columnName": "dayPlanId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemId",
+            "columnName": "itemId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sortOrder",
+            "columnName": "sortOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "plannedMinutes",
+            "columnName": "plannedMinutes",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "bufferBeforeMinutes",
+            "columnName": "bufferBeforeMinutes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bufferAfterMinutes",
+            "columnName": "bufferAfterMinutes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_planned_item_dayPlanId_itemId",
+            "unique": true,
+            "columnNames": [
+              "dayPlanId",
+              "itemId"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_planned_item_dayPlanId_itemId` ON `${TABLE_NAME}` (`dayPlanId`, `itemId`)"
+          },
+          {
+            "name": "index_planned_item_itemId",
+            "unique": false,
+            "columnNames": [
+              "itemId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_planned_item_itemId` ON `${TABLE_NAME}` (`itemId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "day_plan",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "dayPlanId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          },
+          {
+            "table": "item",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "itemId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "time_entry",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `kind` TEXT NOT NULL, `plannedItemId` TEXT, `title` TEXT, `projectId` TEXT, `interruptedEntryId` TEXT, `logicalDate` TEXT NOT NULL, `startMillis` INTEGER NOT NULL, `endMillis` INTEGER, PRIMARY KEY(`id`), FOREIGN KEY(`plannedItemId`) REFERENCES `planned_item`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`projectId`) REFERENCES `project`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`interruptedEntryId`) REFERENCES `time_entry`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kind",
+            "columnName": "kind",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "plannedItemId",
+            "columnName": "plannedItemId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "projectId",
+            "columnName": "projectId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "interruptedEntryId",
+            "columnName": "interruptedEntryId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "logicalDate",
+            "columnName": "logicalDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startMillis",
+            "columnName": "startMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endMillis",
+            "columnName": "endMillis",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_time_entry_plannedItemId",
+            "unique": false,
+            "columnNames": [
+              "plannedItemId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_time_entry_plannedItemId` ON `${TABLE_NAME}` (`plannedItemId`)"
+          },
+          {
+            "name": "index_time_entry_projectId",
+            "unique": false,
+            "columnNames": [
+              "projectId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_time_entry_projectId` ON `${TABLE_NAME}` (`projectId`)"
+          },
+          {
+            "name": "index_time_entry_interruptedEntryId",
+            "unique": false,
+            "columnNames": [
+              "interruptedEntryId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_time_entry_interruptedEntryId` ON `${TABLE_NAME}` (`interruptedEntryId`)"
+          },
+          {
+            "name": "index_time_entry_logicalDate",
+            "unique": false,
+            "columnNames": [
+              "logicalDate"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_time_entry_logicalDate` ON `${TABLE_NAME}` (`logicalDate`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "planned_item",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "plannedItemId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          },
+          {
+            "table": "project",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "projectId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          },
+          {
+            "table": "time_entry",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "interruptedEntryId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "background_run",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `plannedItemId` TEXT NOT NULL, `startMillis` INTEGER NOT NULL, `expectedEndMillis` INTEGER NOT NULL, `endMillis` INTEGER, PRIMARY KEY(`id`), FOREIGN KEY(`plannedItemId`) REFERENCES `planned_item`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "plannedItemId",
+            "columnName": "plannedItemId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startMillis",
+            "columnName": "startMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "expectedEndMillis",
+            "columnName": "expectedEndMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endMillis",
+            "columnName": "endMillis",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_background_run_plannedItemId",
+            "unique": false,
+            "columnNames": [
+              "plannedItemId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_background_run_plannedItemId` ON `${TABLE_NAME}` (`plannedItemId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "planned_item",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "plannedItemId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'da8eba15c822a3f52165904f5b19d10a')"
+    ]
+  }
+}
